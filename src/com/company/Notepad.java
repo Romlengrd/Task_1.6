@@ -21,17 +21,17 @@ public class Notepad {
     public Notepad() {
     }
 
-    public String[] addNote(String s) {
+    public void addNote(String s) {
         Note note=new Note();
         note.setNote(s);
         for(i=0;i<n;i++) {
             if (padNotes[i]==null) {
                 padNotes[i]=note.getNote();
-                System.out.println(padNotes[i]);
+                System.out.println("Ввендено -" + padNotes[i]);
                 break;
             }
         }
-        return padNotes;
+
     }
 
     public void deleteNote(int d) {
@@ -39,13 +39,12 @@ public class Notepad {
 
     }
 
-    public String[] viewAll() {
+    public void viewAll() {
         for(i=0;i<n;i++) {
-           if (padNotes[i] != null) {
-               System.out.println(padNotes[i]);
+            if (padNotes[i] != null) {
+                System.out.println(padNotes[i]);
             }
         }
-        return padNotes;
     }
 
 
