@@ -1,26 +1,25 @@
 package com.company;
 
+/**
+ *Класс реализующий методы Блокнота.
+ *
+ *Имеет методы для добавления, просмотра, удаления и изменения записей.
+ *
+ */
+
 public class Notepad {
-    /**
-    *Класс реализующий методы Блокнота.
-     *
-     *
-     * Может добалять, удалять, редактировать и просматривать записи
-     * @param s -строка/запись в блокноте
-     * @param n -размер блокнота
-     * @param d -индекс удляемой записи
-     * @param k  -индекс редактируемой записи
-     * @param s1 -новвя часть строки
-     *
-     */
 
     private String s="";
     private int n=10;
     private int i;
     private String[] padNotes=new String[n];
 
-    public Notepad() {
-    }
+
+    /**
+     * Добавляет запись в массив записей.
+     *
+     * @param s
+     */
 
     public void addNote(String s) {
         Note note=new Note();
@@ -28,17 +27,29 @@ public class Notepad {
         for(i=0;i<n;i++) {
             if (padNotes[i]==null) {
                 padNotes[i]=note.getNote();
-                System.out.println("Ввендено -" + padNotes[i]);
+                System.out.println("Ввендено - " + padNotes[i]);
                 break;
             }
         }
 
     }
 
+    /**
+     * Удаляет запись с заданным индексом.
+     *
+     * @param d
+     */
+
     public void deleteNote(int d) {
-        padNotes[d]=null;
+        padNotes[d-1]=null;
 
     }
+
+    /**
+     * Просмотр всех записей.
+     *
+     * Выводит элементы массива padNotes.
+     */
 
     public void viewAll() {
         for(i=0;i<n;i++) {
@@ -48,6 +59,14 @@ public class Notepad {
         }
     }
 
+    /**
+     * Редктирование записи блокнота.
+     *
+     * Позволяет дописывать строку с заданным номером.
+     *
+     * @param k
+     * @param s1
+     */
 
     public void editNote(int k, String s1) {
         if (padNotes[k-1]==null) {
