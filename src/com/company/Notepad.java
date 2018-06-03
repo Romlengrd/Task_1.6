@@ -9,7 +9,6 @@ package com.company;
 
 public class Notepad {
 
-    private String s="";
     private int n=10;
     private int i;
     private String[] padNotes=new String[n];
@@ -18,7 +17,7 @@ public class Notepad {
     /**
      * Добавляет запись в массив записей.
      *
-     * @param s
+     * @param s param
      */
 
     public void addNote(String s) {
@@ -37,7 +36,7 @@ public class Notepad {
     /**
      * Удаляет запись с заданным индексом.
      *
-     * @param d
+     * @param d param
      */
 
     public void deleteNote(int d) {
@@ -64,11 +63,12 @@ public class Notepad {
      *
      * Позволяет дописывать строку с заданным номером.
      *
-     * @param k
-     * @param s1
+     * @param k param
+     * @param s1 param
      */
 
     public void editNote(int k, String s1) {
+        String s;
         if (padNotes[k-1]==null) {
             System.out.println("Ошибка - Данная запись пуста и не может быть отредактирована");
         } else {
